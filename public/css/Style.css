@@ -1,0 +1,128 @@
+ body{
+    font-family:"Plus Jakarta Sans", sans-serif !important;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+} 
+
+.container{
+   flex: 1;
+}
+
+.navbar{
+    height: 5rem;
+    background-color:white;
+}
+
+.fa-compass{
+    color:#fe424d;
+    font-size:2rem;
+}
+
+.nav-link{
+    color:#222222 !important;
+}
+
+/* Footer */
+.f-info{
+   text-align:center;
+   height: 8rem;
+   background-color:#ebebeb;
+   display:flex;
+   flex-wrap:wrap;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.f-info-links a{
+    text-decoration:none;
+    color:#222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.f-info-socials i{
+   font-size:1.2rem;
+   margin-right:1rem;
+}
+
+/* Cards */
+.card{
+   border:none !important;
+   margin-bottom: 2rem;
+}
+
+.card-img-top{
+   height: 200px;
+   width: 100%;
+   object-fit: cover;
+   border-radius: 1rem !important;
+}
+
+.listing-card{
+   border:none;
+   border-radius: 1rem;
+   overflow: hidden;
+   transition: 0.3s;
+}
+
+.listing-card:hover{
+   transform:scale(1.03);
+   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.card-body{
+   padding: 0 !important;
+}
+
+.listing-link{
+   text-decoration: none;
+}
+
+/* Buttons */
+.add-btn{
+   background-color:#fe424d !important;
+   border: none;
+}
+
+.edit-btn{
+   background-color:#fe424d !important;
+   border:none !important;
+}
+/* Show page */
+.show-img{
+  height: 30vh;
+}
+.btns{
+   display:flex;
+}
+.show-card{
+   padding-left:0;
+   padding-right:0;
+}
+
+.f-info {
+    display: flex;
+    flex-direction: column; /* Sabhi rows ko vertically stack karne ke liye */
+    align-items: center;    /* Horizontal centering ke liye */
+    justify-content: center;
+    text-align: center;
+    gap: 15px;              /* Icons aur text ke bich space ke liye */
+    padding: 20px 0;
+}
+
+.f-info-socials {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;            /* Icons ke bich space */
+    font-size: 1.2rem;
+}
+
+.f-info-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
