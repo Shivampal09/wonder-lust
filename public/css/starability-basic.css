@@ -1,0 +1,75 @@
+/* Starability.css v2.4.2 */
+
+.starability-basic {
+  display: block;
+  position: relative;
+  width: 150px;
+  min-height: 30px;
+  padding: 0;
+  border: none;
+}
+
+.starability-basic > input {
+  position: absolute;
+  margin-right: -100%;
+  opacity: 0;
+}
+
+.starability-basic > input:checked ~ label,
+.starability-basic > input:focus ~ label,
+.starability-basic > input:hover ~ label {
+  background-position: 0 0;
+}
+
+.starability-basic > label {
+  position: relative;
+  float: right;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath fill='%23e1e6eb' d='M15 0l4.635 9.39 10.365 1.507-7.5 7.31 1.77 10.323L15 23.66l-9.27 4.87L7.5 18.207l-7.5-7.31 10.365-1.507z'/%3E%3C/svg%3E") no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.starability-basic > label:hover ~ label {
+  background-position: 0 -30px;
+}
+
+.starability-basic > input:checked ~ label {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath fill='%23f1c40f' d='M15 0l4.635 9.39 10.365 1.507-7.5 7.31 1.77 10.323L15 23.66l-9.27 4.87L7.5 18.207l-7.5-7.31 10.365-1.507z'/%3E%3C/svg%3E");
+}
+
+.starability-basic > input:focus ~ label {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath fill='%23f1c40f' d='M15 0l4.635 9.39 10.365 1.507-7.5 7.31 1.77 10.323L15 23.66l-9.27 4.87L7.5 18.207l-7.5-7.31 10.365-1.507z'/%3E%3C/svg%3E");
+}
+
+/* Result display content styling */
+.starability-result {
+  position: relative;
+  width: 150px;
+  height: 30px;
+  font-size: 0;
+  line-height: 0;
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath fill='%23e1e6eb' d='M15 0l4.635 9.39 10.365 1.507-7.5 7.31 1.77 10.323L15 23.66l-9.27 4.87L7.5 18.207l-7.5-7.31 10.365-1.507z'/%3E%3C/svg%3E") repeat-x;
+  background-size: 30px 30px;
+}
+
+.starability-result::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath fill='%23f1c40f' d='M15 0l4.635 9.39 10.365 1.507-7.5 7.31 1.77 10.323L15 23.66l-9.27 4.87L7.5 18.207l-7.5-7.31 10.365-1.507z'/%3E%3C/svg%3E") repeat-x;
+  background-size: 30px 30px;
+}
+
+.starability-result[data-rating="1"]::after { width: 30px; }
+.starability-result[data-rating="2"]::after { width: 60px; }
+.starability-result[data-rating="3"]::after { width: 90px; }
+.starability-result[data-rating="4"]::after { width: 120px; }
+.starability-result[data-rating="5"]::after { width: 150px; }

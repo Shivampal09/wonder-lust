@@ -1,4 +1,5 @@
- body{
+
+ .body{
     font-family:"Plus Jakarta Sans", sans-serif !important;
     display:flex;
     flex-direction:column;
@@ -29,8 +30,8 @@
    height: 8rem;
    background-color:#ebebeb;
    display:flex;
-   flex-wrap:wrap;
-   justify-content: space-evenly;
+   flex-direction: column;
+   justify-content: center;
    align-items: center;
 }
 
@@ -49,7 +50,7 @@
 }
 
 /* Cards */
-.card{
+.listing-card{
    border:none !important;
    margin-bottom: 2rem;
 }
@@ -89,7 +90,7 @@
 
 .edit-btn{
    background-color:#fe424d !important;
-   border:none !important;
+   border: none;
 }
 /* Show page */
 .show-img{
@@ -126,3 +127,5 @@
     justify-content: center;
     gap: 15px;
 }
+
+   

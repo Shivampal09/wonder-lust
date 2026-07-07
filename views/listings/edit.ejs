@@ -4,7 +4,11 @@
   <div class="col-8 offset-2">
     <h3>Edit your Listing</h3>
 
-    <form method="POST"action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation">
+    <form method="POST"
+    action="/listings/<%= listing._id %>?_method=PUT"
+     novalidate
+     class="needs-validation"
+     enctype="multipart/form-data">
       
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
@@ -19,20 +23,20 @@
       <div class="mb-3">
         <label for="description" class="form-label">Description</label>
         <textarea name="listing[description]" 
-        class="form-control" required>
-        <%= listing.description %></textarea>
-        <div class="invalid-feedback">Please should be valid</div>
-        </div>
+        class="form-control" required><%= listing.description %></textarea>
+        <div class="invalid-feedback">Please enter a short description</div>
+      </div>
 
       <div class="mb-3">
-        <label for="image" class="form-label">Image Link</label>
+        <label class="form-label">Current Listing Image</label>
+        <br />
+        <img src="<%= originalImageUrl %>" style="width: 250px; height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 10px;" />
+        <br />
+        <label for="image" class="form-label">Upload New Image (Optional)</label>
         <input
          name="listing[image]" 
-        value="<%= listing.image?.url||listing.image %>" 
-        type="text"
-         class="form-control" required/>
-         <div class="invalid-feedback">Please enter a valid Link for image</div>
-
+         type="file"
+         class="form-control" id="image" />
       </div>
 
       <div class="row">
@@ -43,7 +47,7 @@
           value="<%= listing.price %>" 
           type="number"
            class="form-control" required/>
-           <div class="invaild-feedback"> Price should be valid</div>
+           <div class="invalid-feedback"> Price should be valid</div>
         </div>
 
         <div class="mb-3 col-md-8">
@@ -54,7 +58,7 @@
           type="text" class="form-control" required/>
           <div class="invalid-feedback">country name should be valid</div>
         </div>
-    </div>
+      </div>
 
       <div class="mb-3">
         <label for="location" class="form-label">Location</label>
@@ -68,4 +72,3 @@
     </form>
   </div>
 </div>
-<script src="/js/script.js"></script>
