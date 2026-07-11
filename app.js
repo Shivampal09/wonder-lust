@@ -20,9 +20,17 @@ const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const user = require("./models/user.js");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
-  // DATABASE CONNECTION
-mongoose.connect(MONGO_URL)
+// Database URL setting (wanderlust ki jagah tripvista kar diya)
+const dbUrl = process.env.ATLASDB_URL || "mongodb://127.0.0.1:27017/tripvista";
+
+mongoose.connection.once("open", async () => {
+    console.log("Connected Database:", mongoose.connection.name);
+
+    const collections = await mongoose.connection.db.listCollections().toArray();
+    console.log("Collections:", collections.map(c => c.name));
+});
+// DATABASE CONNECTION
+mongoose.connect(dbUrl)
     .then(() => {
         console.log("connected to DB");
     })

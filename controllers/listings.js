@@ -1,10 +1,18 @@
+const mongoose = require("mongoose");
 const Listing = require("../models/listing.js");
+
 module.exports.index = async (req, res) => {
-   const listings = await Listing.find({}); 
-    res.render("listings/index.ejs", { listings }); 
+    const listings = await Listing.find({});
+
+    console.log("===== INDEX ROUTE HIT =====");
+    console.log("Database:", mongoose.connection.name);
+    console.log("Total Listings:", listings.length);
+    console.log("Titles:", listings.map(l => l.title));
+
+    res.render("listings/index.ejs", { listings });
 };
-module.exports.renderNewForm =(req, res) => {
-   
+
+module.exports.renderNewForm = (req, res) => {
     res.render("listings/new.ejs");
 };
 // Show listings
